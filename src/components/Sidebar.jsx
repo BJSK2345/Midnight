@@ -14,9 +14,9 @@ function Icon({ path }) {
   );
 }
 
-export default function Sidebar({ activeView, isOpen, onNavigate, onClose }) {
+export default function Sidebar({ activeView, onNavigate, onClose }) {
   return (
-    <aside className={`midnight-sidebar ${isOpen ? 'open' : ''}`} aria-label="Midnight navigation">
+    <aside className="midnight-sidebar open" aria-label="Midnight navigation">
       <div className="sidebar-panel-bracket" />
       <div className="midnight-sidebar-head">
         <div>
