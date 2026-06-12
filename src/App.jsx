@@ -139,14 +139,17 @@ export default function App() {
       <div className="hologram-overlay" />
       <div className="glitch-vignette" />
       {sidebarOpen && (
-        <Sidebar
-          activeView={activeView}
-          onNavigate={(view) => {
-            setActiveView(view);
-            setSidebarOpen(false);
-          }}
-          onClose={() => setSidebarOpen(false)}
-        />
+        <>
+          <button className="sidebar-scrim" type="button" aria-label="Close navigation" onClick={() => setSidebarOpen(false)} />
+          <Sidebar
+            activeView={activeView}
+            onNavigate={(view) => {
+              setActiveView(view);
+              setSidebarOpen(false);
+            }}
+            onClose={() => setSidebarOpen(false)}
+          />
+        </>
       )}
       <div className={`stark-hud midnight-shell ${sidebarOpen ? 'sidebar-shifted' : ''}`}>
         <Header isStreaming={isStreaming} onMenuClick={() => setSidebarOpen((open) => !open)} />
